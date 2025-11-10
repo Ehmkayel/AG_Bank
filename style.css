@@ -1,0 +1,300 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --color-primary: #438cf6;
+  --color-secondary: #9047ff;
+  --color-background-light: #e4ecf9;
+  --color-white: #ffffff;
+  --color-slider: #d1d9e4;
+  --color-currency: #056ef3;
+  --color-text-dark: #5c727e;
+  --color-text-medium: #7f8a99;
+  --shadow-soft: 0 10px 30px rgba(0, 0, 0, 0.05);
+  --shadow-large: 0 50px 100px 10px rgba(0, 0, 0, 0.25);
+  --font-body: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-size: 1em;
+}
+
+body {
+  font-family: var(--font-body);
+  background: linear-gradient(90deg, #b7caf5, #764ba2);
+  color: var(--color-text-dark);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+a {
+  text-decoration: none;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  font-size: 1rem;
+  padding: 1rem 2rem;
+  border-radius: 6px;
+  font-weight: bold;
+  transition: background-color 0.2s;
+}
+
+.page-container {
+  max-width: 1200px;
+  width: 90%;
+  margin: 20px auto;
+  box-shadow: var(--shadow-soft);
+}
+
+header {
+  padding: 15px 80px;
+  box-shadow: var(--shadow-large);
+  background-color: var(--color-white);
+}
+
+.header__nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header__logo-text {
+  font-size: 1rem;
+  color: var(--color-primary);
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+.header__menu-toggle {
+  background: none;
+  color: var(--color-primary);
+  font-size: 1.5rem;
+  padding: 0;
+}
+
+.main-content {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr;
+  padding: 80px;
+  background-color: var(--color-background-light);
+  gap: 12px;
+  align-items: start;
+}
+
+.mortgage-calculator__intro {
+  margin-bottom: 40px;
+}
+
+.mortgage-calculator__title {
+  font-size: 1.8rem;
+  font-weight: 800;
+  margin-bottom: 3px;
+}
+
+.mortgage-calculator__subtitle {
+  font-size: 1rem;
+  color: var(--color-text-medium);
+}
+
+.mortgage-calculator__form {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.form-group__label {
+  color: var(--color-text-medium);
+  font-size: 0.9rem;
+  margin-bottom: 15px;
+}
+
+.form-group__input-wrapper {
+  display: flex;
+  margin-bottom: 10px;
+  gap: 8px;
+}
+
+.form-group__currency-symbol {
+  font-size: 0.8rem;
+  font-weight: 800;
+  margin-top: 10px;
+}
+
+.form-group input[type="number"],
+.form-group input[type="text"] {
+  border: none;
+  outline: none;
+  background: transparent;
+  font-size: 1.8rem;
+  font-weight: 800;
+  color: var(--color-text-dark);
+  margin-top: 10px;
+}
+
+.form-group input[type="range"] {
+  height: 3px;
+  width: 70%;
+  background: var(--color-slider);
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.form-group input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  cursor: pointer;
+  box-shadow: var(--shadow-soft);
+}
+
+.form-group__range-labels {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.75rem;
+  color: var(--color-text-medium);
+  margin-top: 3px;
+  width: 70%;
+}
+
+.form-group__helper-text {
+  font-size: 0.8rem;
+  color: var(--color-text-medium);
+  margin-top: 3px;
+}
+
+.form-group-flex-container {
+  display: flex;
+  gap: 40px;
+  align-items: flex-start;
+}
+
+.form-period {
+  flex: 2;
+  border: none;
+}
+
+.form-period__legend {
+  color: var(--color-text-medium);
+  font-size: 0.9rem;
+  margin: 15px 0;
+}
+
+.form-period__option {
+  display: flex;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+.form-period__option label {
+  font-size: 0.95rem;
+  color: var(--color-text-dark);
+  margin-left: 20px;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.form-group--zip-code {
+  flex: 1;
+}
+
+.form-group--zip-code input[type="text"] {
+  font-size: 0.95rem;
+  margin-top: 5px;
+}
+
+/* Right Section */
+.calculation-results {
+  background-color: var(--color-white);
+  border-radius: 20px;
+  box-shadow: var(--shadow-large);
+  text-align: center;
+  justify-content: center;
+  position: relative;
+  padding: 100px 0;
+  align-self: end;
+  margin-top: auto;
+}
+
+.calculation-results__prompt {
+  font-size: 0.9rem;
+  color: var(--color-text-medium);
+  margin-bottom: 15px;
+}
+
+.calculation-results__payment {
+  margin-bottom: 30px;
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+}
+
+.calculation-results__currency {
+  font-size: 1.2rem;
+  font-weight: 300;
+  color: var(--color-currency);
+}
+
+.calculation-results__amount {
+  font-size: 4rem;
+  font-weight: 800;
+  color: var(--color-currency);
+  line-height: 1;
+}
+
+.calculation-results__details {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 40px;
+  max-width: 200px;
+  margin: auto;
+}
+
+.detail-item {
+  display: flex;
+  flex-direction: column;
+}
+
+.detail-item__label {
+  color: var(--color-text-medium);
+  margin-bottom: 8px;
+}
+
+.detail-item__value {
+  font-weight: 600;
+}
+
+.cta-button {
+  background-color: var(--color-secondary);
+  color: var(--color-white);
+  width: 30%;
+  padding: 18px 0;
+  border-radius: 16px;
+  transition: background-color 0.3s;
+  position: absolute;
+  bottom: -20px;
+  left: 80px;
+  transform: none;
+}
+
+.cta-button:hover {
+  background-color: var(--color-primary);
+}
+
+@media (max-width: 900px) {
+  .main-content {
+    flex-direction: column;
+    padding: 20px;
+  }
+
+  .form-group-flex-container {
+    flex-direction: column;
+    gap: 20px;
+  }
+}
