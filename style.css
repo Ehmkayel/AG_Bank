@@ -288,8 +288,14 @@ header {
 }
 
 @media (max-width: 900px) {
+  header {
+    padding: 8px 20px;
+    box-shadow: var(--shadow-large);
+    background-color: var(--color-white);
+  }
+
   .main-content {
-    flex-direction: column;
+    grid-template-columns: 1fr;
     padding: 20px;
   }
 
