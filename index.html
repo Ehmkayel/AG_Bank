@@ -6,14 +6,185 @@
     <link rel="stylesheet" href="style.css" />
     <link
       rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
-      integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
-    <title>AG Bank</title>
+    <title>AG Bank - Digital Credit Experience</title>
   </head>
   <body>
+    <div class="page-container">
+      <header class="header">
+        <nav class="header__nav">
+          <a
+            href="/"
+            class="header__logo-link"
+            aria-label="AG Bank - Go to homepage"
+          >
+            <h1 class="header__logo-text">AG BANK</h1>
+          </a>
+          <button
+            class="header__menu-toggle"
+            aria-expanded="false"
+            aria-controls="main-menu"
+            aria-label="Open menu"
+          >
+            <i class="fa-solid fa-bars"></i>
+          </button>
+        </nav>
+      </header>
+
+      <main class="main-content">
+        <section class="mortgage-calculator">
+          <div class="mortgage-calculator__intro">
+            <h2 class="mortgage-calculator__title">
+              Get started with Digital Credit Experience
+            </h2>
+            <p class="mortgage-calculator__subtitle">
+              Qualify or apply your mortgage in minutes
+            </p>
+          </div>
+
+          <form class="mortgage-calculator__form">
+            <div class="form-group form-group--price">
+              <label for="purchase-price-input" class="form-group__label"
+                >Purchase price</label
+              >
+              <div class="form-group__input-wrapper">
+                <span class="form-group__currency-symbol">$</span>
+                <input
+                  type="number"
+                  id="purchase-price-input"
+                  name="purchase_price"
+                  value="250000"
+                  min="50000"
+                  max="2500000"
+                />
+              </div>
+              <input
+                type="range"
+                id="purchase-price-slider"
+                name="purchase_price_range"
+                value="250000"
+                min="50000"
+                max="2500000"
+                step="1000"
+                aria-labelledby="purchase-price-input"
+              />
+              <div class="form-group__range-labels">
+                <span class="form-group__range-min">$50 000</span>
+                <span class="form-group__range-max">$2.5 million</span>
+              </div>
+            </div>
+
+            <div class="form-group form-group--down-payment">
+              <label for="down-payment-input" class="form-group__label"
+                >Down payment</label
+              >
+              <div class="form-group__input-wrapper">
+                <span class="form-group__currency-symbol">$</span>
+                <input
+                  type="number"
+                  id="down-payment-input"
+                  name="down_payment"
+                  value="50000"
+                  min="2000"
+                  max="500000"
+                />
+              </div>
+              <input
+                type="range"
+                id="down-payment-slider"
+                name="down_payment_range"
+                value="50000"
+                min="2000"
+                max="500000"
+                step="100"
+                aria-labelledby="down-payment-input"
+              />
+              <p class="form-group__helper-text">
+                4% or more of purchase price
+              </p>
+            </div>
+
+            <div class="form-group-flex-container">
+              <fieldset class="form-period">
+                <legend class="form-period__legend">Period</legend>
+
+                <div class="form-period__option">
+                  <input
+                    type="radio"
+                    id="period-5-1-arm"
+                    name="period"
+                    value="5-1-arm"
+                  />
+                  <label for="period-5-1-arm">5/1 ARM variable</label>
+                </div>
+
+                <div class="form-period__option">
+                  <input
+                    type="radio"
+                    id="period-15-year"
+                    name="period"
+                    value="15-year"
+                  />
+                  <label for="period-15-year">15 year fixed</label>
+                </div>
+
+                <div class="form-period__option">
+                  <input
+                    type="radio"
+                    id="period-30-year"
+                    name="period"
+                    value="30-year"
+                    checked
+                  />
+                  <label for="period-30-year">30 year fixed</label>
+                </div>
+              </fieldset>
+
+              <div class="form-group form-group--zip-code">
+                <label for="zip-code-input" class="form-group__label"
+                  >Zip code</label
+                >
+                <input
+                  type="text"
+                  id="zip-code-input"
+                  name="zip_code"
+                  value="90459"
+                  placeholder="Enter zip code"
+                />
+              </div>
+            </div>
+          </form>
+        </section>
+
+        <section class="calculation-results">
+          <p class="calculation-results__prompt">Your total payment will be</p>
+          <div class="calculation-results__payment">
+            <span class="calculation-results__currency">$</span>
+            <span class="calculation-results__amount">780</span>
+          </div>
+
+          <div class="calculation-results__details">
+            <div class="detail-item">
+              <span class="detail-item__label">Rate</span>
+              <span class="detail-item__value">5.250%</span>
+            </div>
+            <div class="detail-item">
+              <span class="detail-item__label">APR</span>
+              <span class="detail-item__value">4.418%</span>
+            </div>
+            <div class="detail-item">
+              <span class="detail-item__label">Points</span>
+              <span class="detail-item__value">0.325</span>
+            </div>
+          </div>
+
+          <button type="submit" class="cta-button">Get started</button>
+        </section>
+      </main>
+    </div>
     <script src="script.js" type="module"></script>
   </body>
 </html>
