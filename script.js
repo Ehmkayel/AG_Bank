@@ -6,10 +6,14 @@ document.addEventListener("DOMContentLoaded", function () {
   const periodRadios = document.querySelectorAll('input[name="period"]');
   const zipCodeInput = document.getElementById("zip-code-input");
   const paymentAmount = document.querySelector(".calculation-results__amount");
-  const rateValue = document.querySelector(".detail-item__value:nth-child(1)");
-  const aprValue = document.querySelector(".detail-item__value:nth-child(2)");
+  const rateValue = document.querySelector(
+    ".calculation-results__details .detail-item:nth-child(1) .detail-item__value"
+  );
+  const aprValue = document.querySelector(
+    ".calculation-results__details .detail-item:nth-child(2) .detail-item__value"
+  );
   const pointsValue = document.querySelector(
-    ".detail-item__value:nth-child(3)"
+    ".calculation-results__details .detail-item:nth-child(3) .detail-item__value"
   );
   const ctaButton = document.querySelector(".cta-button");
 
@@ -110,11 +114,9 @@ document.addEventListener("DOMContentLoaded", function () {
     return calculations[period] || calculations["30-year"];
   }
 
-
   function showError(message) {
     alert(`Error: ${message}`);
   }
-
 
   function handleGetStarted() {
     const purchasePrice = parseInt(purchasePriceInput.value);
@@ -165,9 +167,7 @@ document.addEventListener("DOMContentLoaded", function () {
       `Would you like to continue?`;
 
     if (confirm(message)) {
-      alert(
-        "Thank you!"
-      );
+      alert("Thank you!");
     }
   }
 
